@@ -8,9 +8,12 @@
     <title>Time4Learnig</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" /><!--laravel-->
-    <link rel="stylesheet" href="{{asset('css/index.css')}}" /><!--laravel-->
-    <link rel="shortcut icon" href="../../public/imgs/title_icon.png" /><!--laravel-->
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
+    <!--laravel-->
+    <link rel="stylesheet" href="{{asset('css/index.css')}}" />
+    <!--laravel-->
+    <link rel="shortcut icon" href="imgs/title_icon.png" />
+    <!--laravel-->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
@@ -51,7 +54,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false"><img src="../../public/imgs/download.png" /><span class="caret"></span></a><!--laravel-->
+                            aria-expanded="false"><img src="imgs/download.png" /><span class="caret"></span></a>
+                        <!--laravel-->
                         <ul class="dropdown-menu">
                             <li class="text-center  special">
                                 Sign in as:
@@ -71,15 +75,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 ">
+                <!--global search-->
                 <div class="search2 ">
-                    <form>
+                    <form method="" action="">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Default input">
+                            <input class="form-control" type="text" placeholder="search">
                             <button type="submit" class="btn btn-success ">Go!</button>
                         </div>
                     </form>
                 </div>
-
+                <!---end global search-->
+                <!--start side bar-->
                 <div class="sidebar text-center">
                     <h3>category</h3>
                     <div class="style"></div>
@@ -94,43 +100,48 @@
                 </div>
 
             </div>
+            <!--end side bar -->
             <div class="col-lg-6  posts">
                 <!--write post-->
                 <div class="post">
-                    <form>
+                    <form method="" action="">
                         <div class="form-group">
-                            <textarea  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-info"><i class="fas fa-pen"></i> &nbsp; post</button>
                     </form>
                 </div>
                 <!--end write post-->
-                <!--start post -->
+                <!--start post1 -->
                 <div class="main-post">
-                    <img src="../../public/imgs/avatar3.png" alt="avatar" />
+                    <img src="imgs/avatar3.png" alt="avatar" />
                     <span>&nbsp;abdelmoniem ahmed</span>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <img class="img-responsive" src="../../public/imgs/backlit-bright-clouds-355508.jpg" alt="plane" /><!--laravel-->
+                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
+                    <!--laravel-->
                     <div class="container ">
                         <a class="button button--fun" href="#">
                             <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
                         </a>
                     </div>
                 </div>
-                <div class="main-post c">
-                    <img src="../../public/imgs/avatar2.png" alt="avatar" /><!--laravel-->
+                <!--endpost1-->
+                <div class="main-post ">
+                    <img src="imgs/avatar2.png" alt="avatar" />
+                    <!--laravel-->
                     <span>&nbsp;ali ahmed</span>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <img class="img-responsive" src="../../public/imgs/negative-space-vintage-sign-night-sky-constellation-space-dark-rakicevic-nenad.jpg"
-                        alt="plane" /><!--laravel-->
+                    <img class="img-responsive" src="imgs/negative-space-vintage-sign-night-sky-constellation-space-dark-rakicevic-nenad.jpg"
+                        alt="plane" />
+                    <!--laravel-->
                     <div class="container ">
                         <a class="button button--fun" href="#">
                             <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
@@ -138,7 +149,8 @@
                     </div>
                 </div>
                 <div class="main-post">
-                    <img src="../../public/imgs/avatar3.png" alt="avatar" /><!--laravel-->
+                    <img src="imgs/avatar3.png" alt="avatar" />
+                    <!--laravel-->
                     <span>&nbsp; mohamed ahmed</span>
 
                     <p>
@@ -146,7 +158,8 @@
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <img class="img-responsive" src="../../public/imgs/abundance-bookcase-books-775998.jpg" alt="plane" /><!--laravel-->
+                    <img class="img-responsive" src="imgs/abundance-bookcase-books-775998.jpg" alt="plane" />
+                    <!--laravel-->
                     <div class="container ">
                         <a class="button button--fun" href="#">
                             <i class="fas fa-comment"></i><span class="button__content"> Comment</span>
@@ -154,12 +167,14 @@
                     </div>
                 </div>
             </div>
-            <!--end post c-->
+            <!--end post -->
             <div class="col-lg-3">
+                <!-- start events-->
                 <div class="event1">
                     <h3 class="text-center">upcoming events </h3>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/osc.jpg" alt="osc"><!--lravel-->
+                        <img src="imgs/osc.jpg" alt="osc">
+                        <!--lravel-->
                         <p>
                             saturday <span style="color:rgb(160, 160, 160)">at</span><br>
                             11:30 AM
@@ -168,7 +183,8 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/microsoft-2.png" alt="osc"><!--laravel-->
+                        <img src="imgs/microsoft-2.png" alt="osc">
+                        <!--laravel-->
                         <p>
                             sunday <span style="color:rgb(160, 160, 160)">at</span><br>
                             10:00 AM
@@ -177,7 +193,8 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/cover.jpg" alt="osc"><!--laravel-->
+                        <img src="imgs/cover.jpg" alt="osc">
+                        <!--laravel-->
                         <p>
                             thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
                             8:00 AM
@@ -186,7 +203,8 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/pexels-photo-908284.jpeg" alt="osc"><!--laravel-->
+                        <img src="imgs/pexels-photo-908284.jpeg" alt="osc">
+                        <!--laravel-->
                         <p>
                             thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
                             8:00 AM
@@ -198,18 +216,24 @@
                 </div>
 
             </div>
+            <!--end events-->
         </div>
     </div>
+    <!--start footer-->
     <footer class="text-center">
         Copy Right &copy; Designed by<span>Osc</span> 's Team 2018
     </footer>
+    <!--end footer-->
 
     <!--end the content-->
     <!--java script libraries-->
-    <script src="../../public/js/jquery-3.3.1.min.js"></script><!--laravel-->
-    <script src="../../public/js/index.js"></script><!--laravel-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!--laravel-->
+    <script src="js/index.js"></script>
+    <!--laravel-->
     <!--bootsrap-->
-    <script src="../../public/js/bootstrap.min.js"></script><!--laravel-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--laravel-->
 </body>
 
 </html>

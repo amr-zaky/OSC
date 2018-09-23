@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/index.css')}}" />
-    <link rel="shortcut icon" href="../../public/imgs/title_icon.png" />
+    <link rel="shortcut icon" href="imgs/title_icon.png" />
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
@@ -51,7 +51,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false"><img src="../../public/imgs/download.png" /><span class="caret"></span></a>
+                            aria-expanded="false"><img src="imgs/download.png" /><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="text-center  special">
                                 Sign in as:
@@ -72,7 +72,7 @@
         <div class="row">
             <div class="col-lg-3 ">
                 <div class="search2 ">
-                    <form>
+                    <form method ="" action="">
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="Default input">
                             <button type="submit" class="btn btn-success ">Go!</button>
@@ -97,14 +97,14 @@
             <div class="col-lg-6  posts">
                 <!--start post -->
                 <div class="main-post">
-                    <img src="../../public/imgs/avatar3.png" alt="avatar" />
+                    <img src="imgs/avatar3.png" alt="avatar" />
                     <span>&nbsp;abdelmoniem ahmed</span>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                    <img class="img-responsive" src="../../public/imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
+                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
 
                 </div>
                 <div class="comment">
@@ -122,7 +122,7 @@
                 <div class="event1">
                     <h3 class="text-center">upcoming events </h3>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/osc.jpg" alt="osc">
+                        <img src="imgs/osc.jpg" alt="osc">
                         <p>
                             saturday <span style="color:rgb(160, 160, 160)">at</span><br>
                             11:30 AM
@@ -131,7 +131,7 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/microsoft-2.png" alt="osc">
+                        <img src="imgs/microsoft-2.png" alt="osc">
                         <p>
                             sunday <span style="color:rgb(160, 160, 160)">at</span><br>
                             10:00 AM
@@ -140,7 +140,7 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/cover.jpg" alt="osc">
+                        <img src="imgs/cover.jpg" alt="osc">
                         <p>
                             thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
                             8:00 AM
@@ -149,7 +149,7 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="../../public/imgs/pexels-photo-908284.jpeg" alt="osc">
+                        <img src="imgs/pexels-photo-908284.jpeg" alt="osc">
                         <p>
                             thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
                             8:00 AM
@@ -169,10 +169,10 @@
 
     <!--end the content-->
     <!--java script libraries-->
-    <script src="../../public/js/jquery-3.3.1.min.js"></script><!--laravel-->
-    <script src="../../public/js/index.js"></script><!--laravel-->
+    <script src="js/jquery-3.3.1.min.js"></script><!--laravel-->
+    <script src="js/index.js"></script><!--laravel-->
     <!--bootsrap-->
-    <script src="../../public/js/bootstrap.min.js"></script><!--laravel-->
+    <script src="js/bootstrap.min.js"></script><!--laravel-->
 </body>
 
 </html>

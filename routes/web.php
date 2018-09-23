@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/main', "indexcontroller@index");
+Route::get('/comment', "indexcontroller@comment");
