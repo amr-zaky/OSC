@@ -80,7 +80,11 @@
                     <form method="" action="">
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="search">
+<<<<<<< HEAD
                             <button type="submit" class="btn btn-danger btn-lg ">Go!</button>
+=======
+                            <button type="submit" class="btn btn-success ">Go!</button>
+>>>>>>> dcc8d6460f32a217c0b856af08a862e8cdba09cb
                         </div>
                     </form>
                 </div>
@@ -106,7 +110,11 @@
                 <div class="post">
                     <form method="" action="">
                         <div class="form-group">
+<<<<<<< HEAD
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+=======
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+>>>>>>> dcc8d6460f32a217c0b856af08a862e8cdba09cb
                         </div>
                         <button type="submit" class="btn btn-info"><i class="fas fa-pen"></i> &nbsp; post</button>
                     </form>
@@ -121,7 +129,11 @@
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
+<<<<<<< HEAD
                     <img class="img-responsive" src="imgs/post.jpg" alt="plane" />
+=======
+                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
+>>>>>>> dcc8d6460f32a217c0b856af08a862e8cdba09cb
                     <!--laravel-->
                     <div class="container ">
                         <a class="button button--fun" href="#">
@@ -139,7 +151,11 @@
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
+<<<<<<< HEAD
                     <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg"
+=======
+                    <img class="img-responsive" src="imgs/negative-space-vintage-sign-night-sky-constellation-space-dark-rakicevic-nenad.jpg"
+>>>>>>> dcc8d6460f32a217c0b856af08a862e8cdba09cb
                         alt="plane" />
                     <!--laravel-->
                     <div class="container ">
@@ -173,7 +189,11 @@
                 <div class="event1">
                     <h3 class="text-center">upcoming events </h3>
                     <div class="e1 text-center">
+<<<<<<< HEAD
                         <img src="imgs/ev2.jpg" alt="osc">
+=======
+                        <img src="imgs/osc.jpg" alt="osc">
+>>>>>>> dcc8d6460f32a217c0b856af08a862e8cdba09cb
                         <!--lravel-->
                         <p>
                             saturday <span style="color:rgb(160, 160, 160)">at</span><br>
@@ -183,7 +203,11 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
+<<<<<<< HEAD
                         <img src="imgs/ev.jpg" alt="osc">
+=======
+                        <img src="imgs/microsoft-2.png" alt="osc">
+>>>>>>> dcc8d6460f32a217c0b856af08a862e8cdba09cb
                         <!--laravel-->
                         <p>
                             sunday <span style="color:rgb(160, 160, 160)">at</span><br>
