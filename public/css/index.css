@@ -20,18 +20,30 @@ body {
 
 .navbar {
     border-bottom: 5px solid gray;
-
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom:5px;
+    padding-top:5px;
 }
 
 .dropdown-menu {
     border-top: 5px solid #6f7883;
     width: 200px;
+    background-color: #e3e3e3;
 }
 
-.dropdown-menu>li>a {
+    
+  .navbar-inverse .navbar-nav > li > a
+  {
+    margin-left:20px;
+  }  
+.dropdown-menu>li>a 
+{
     -webkit-transition: padding 0.4s ease;
     -moz-transition: padding 0.4s ease;
     transition: padding 0.4s ease;
+    background-color:#ccc;
+    font-weight:bold;
 }
 
 .dropdown-menu>li>a:hover,
@@ -41,7 +53,8 @@ body {
 }
 
 .navbar-inverse .navbar-brand {
-    font-family: 'Indie Flower', cursive
+    font-family: 'Indie Flower', cursive;
+    text-align:center;
 }
 
 .special {
@@ -266,6 +279,7 @@ a {
     margin-top:0;
     box-shadow: 3px 3px 3px 3px gray;
     margin-bottom: 20px;
+
 }
 
 .event1 .e1 {
@@ -331,13 +345,22 @@ a {
     margin-top: 15px;
     margin-left: 20px;
     display: inline-block;
+    width: 75%;
+    margin-left:10px;
+    display: inline-block;
+    padding:20px;
 
 }
 
 .search2 .form-group button {
+    clear:both;
     margin-left: -10px;
     padding: 6.5px;
     width: 60px;
+      padding: 8.2px;
+    width: 60px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 /*end global search*/
@@ -379,16 +402,18 @@ a {
 
 .sidebar ul li {
     padding: 10px;
-    background-color:rgb(112,128,144);
+   /* background-color:rgb(112,128,144);*/
     color: #fff;
     margin-bottom:10px;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
+    background-color: rgb(75, 72, 72);
+    color: #fff;
 }
 
 
 .sidebar ul li:hover {
-    box-shadow: 0 0 2px 2px rgb(70, 69, 69);
+      box-shadow: 0 0 2px 2px rgb(70, 69, 69);
     background-color:rgb(47,79,79);
     transform: scale(1.01, 1.01);
     cursor: pointer;

@@ -82,6 +82,7 @@
                             <input class="form-control" type="text" placeholder="search">
                             <button type="submit" class="btn btn-danger btn-lg ">Go!</button>
                         </div>
+                        
                     </form>
                 </div>
                 <!---end global search-->
