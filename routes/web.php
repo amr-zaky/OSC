@@ -15,3 +15,12 @@ Route::get('/',          "indexcontroller@welcome");
 Route::get('/main',      "indexcontroller@index");
 Route::get('/comment',   "indexcontroller@comment");
 Route::get('/university',"indexcontroller@university");
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
