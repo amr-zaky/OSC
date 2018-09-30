@@ -11,5 +11,7 @@
 |
 */
 
-Route::get('/main', "indexcontroller@index");
-Route::get('/comment', "indexcontroller@comment");
+Route::get('/',          "indexcontroller@welcome");
+Route::get('/main',      "indexcontroller@index");
+Route::get('/comment',   "indexcontroller@comment");
+Route::get('/university',"indexcontroller@university");
