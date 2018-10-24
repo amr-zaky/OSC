@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Post;
 
 class indexcontroller extends Controller
 {
@@ -13,7 +15,11 @@ class indexcontroller extends Controller
   }
   public function index()
   {
-    return view("index");
+
+    $post=Post::all();
+
+    return view("index")->with("posts",$post);
+
   }
   public function comment()
   {
@@ -23,4 +29,28 @@ class indexcontroller extends Controller
   {
     return view ("university");
   }
+
+
+  public function create(Request $request)
+  {
+    
+    $body=$request->body;
+    $tilte=$request->tilte;
+    $author=$request->author;
+
+    $post=new Post();
+    $post->author=$author;
+    $post->tilte=$tilte;
+    $post->body=$body;
+    $post->User_id=auth()->user()->id;
+    $post->category_id=1;
+    $post->image="imgs/post.jpg";
+
+    $post->save();
+
+    return redirect('/main');
+  }
+
+
+
 }
