@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="bg col-lg-8 col-sm-8 col-xs-12">
-        <img class="bgImg" src="../images/bg11.jpg">
+        <img class="bgImg" src="./images/bg11.jpg">
     </div>
     <div class="loginForm col-lg-4 col-sm-8 col-xs-12">
         <h2 style="text-align: center; margin-top: 30%; margin-bottom: 20px; font-weight: bold;">Login</h2>

@@ -105,68 +105,50 @@
             <div class="col-lg-6  posts">
                 <!--write post-->
                 <div class="post">
-                    <form method="" action="">
+                    <form method="POST" action="/main1">
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="5"></textarea>
                         </div>
+
+                        <div class="form-group">
+                            <input type="text" name="author" placeholder="Author">
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="title" placeholder="Ttitle">
+                            
+                        </div>
+
                         <button type="submit" class="btn btn-info"><i class="fas fa-pen"></i> &nbsp; post</button>
                     </form>
                 </div>
                 <!--end write post-->
                 <!--start post1 -->
-                <div class="main-post">
-                    <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp;abdelmoniem ahmed</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <img class="img-responsive" src="imgs/post.jpg" alt="plane" />
-                    <!--laravel-->
-                    <div class="container ">
-                        <a class="button button--fun" href="#">
-                            <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
-                        </a>
-                    </div>
-                </div>
-                <!--endpost1-->
-                <div class="main-post ">
-                    <img src="imgs/avatar2.png" alt="avatar" />
-                    <!--laravel-->
-                    <span>&nbsp;ali ahmed</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg"
-                        alt="plane" />
-                    <!--laravel-->
-                    <div class="container ">
-                        <a class="button button--fun" href="#">
-                            <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="main-post">
-                    <img src="imgs/avatar3.png" alt="avatar" />
-                    <!--laravel-->
-                    <span>&nbsp; mohamed ahmed</span>
 
+                @foreach($posts as $post)
+                
+                <div class="main-post">
+                    <img src="imgs/avatar3.png" alt="avatar" />
+                    <span>&nbsp; {{$post->title}}</span>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       {{$post->body}}
+                       {{$post->created_at}}
                     </p>
-                    <img class="img-responsive" src="imgs/abundance-bookcase-books-775998.jpg" alt="plane" />
+                    <img class="img-responsive" src="{{$post->image}}" alt="plane" />
                     <!--laravel-->
                     <div class="container ">
                         <a class="button button--fun" href="#">
-                            <i class="fas fa-comment"></i><span class="button__content"> Comment</span>
+                            <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
                         </a>
                     </div>
                 </div>
+            
+            @endforeach
+                <!--endpost1-->
+               
+              
+
             </div>
             <!--end post -->
             <div class="col-lg-3">
@@ -193,6 +175,7 @@
                         <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
                     </div>
                     <hr>
+
                     <div class="e1 text-center">
                         <img src="imgs/cover.jpg" alt="osc">
                         <!--laravel-->
