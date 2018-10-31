@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\universityController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,14 +12,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+  
 Route::get('/',          "indexcontroller@welcome");
 Route::get('/main',      "indexcontroller@index");
 Route::get('/comment',   "indexcontroller@comment");
-Route::get('/university',"indexcontroller@university");
-
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('university','universityController');
