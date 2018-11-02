@@ -38,6 +38,9 @@
             <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li title="admin"><a href="#"><i class="fas fa-user-tie fa-lg"></i>&nbsp; Admin <span class="sr-only">(current)</span></a></li>
+
+
+
                     <li class="dropdown" title="university">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false"><i class="fas fa-university fa-lg"></i>&nbsp; Unversity <span class="caret"></span></a>
@@ -94,7 +97,7 @@
                     <ul class="list-unstyled">
 
                         @foreach($cats as $cat)
-                        <li><a href="#"><i class="fas fa-chalkboard"></i>&nbsp;{{$cat->category_Name}}</a></li>
+                        <li><a href="/searchcat/{{$cat->category_Name}}"><i class="fas fa-chalkboard"></i>&nbsp;{{$cat->category_Name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -108,22 +111,23 @@
 
                             {{csrf_field()}}
                         <div class="form-group">
-                            <input  class="form-control" type="text" name="title" placeholder="Ttitle">
+                            <input  class="form-control" type="text" name="title" placeholder="Title">
                             
                         </div>
 
                         <div class="form-group">
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="5" placeholder="..Post Containt"></textarea>
                         </div>
-                        <!-- 
+                        
                         <div class="form-group">
                             <input  type="file" name="imgefile">
                             
-                        </div> -->
+                        </div>
 
 
 
                         <button type="submit" class="btn btn-info"><i class="fas fa-pen"></i> &nbsp; post</button>
+
                     </form>
                 </div>
                 <!--end write post-->

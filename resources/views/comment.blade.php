@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/index.css')}}" />
-    <link rel="shortcut icon" href="imgs/title_icon.png" />
+    <link rel="shortcut icon" href="../imgs/title_icon.png" />
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
@@ -51,7 +51,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false"><img src="imgs/download.png" /><span class="caret"></span></a>
+                            aria-expanded="false"><img src="../imgs/download.png" /><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="text-center  special">
                                 Sign in as:
@@ -86,12 +86,9 @@
                     <h3>category</h3>
                     <div class="style"></div>
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="fas fa-chalkboard"></i>&nbsp;lectures</a></li>
-                        <li><a href="#"><i class="fas fa-vials"></i>&nbsp;labs</a></li>
-                        <li><a href="#"><i class="fas fa-book"></i>&nbsp;books</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i>&nbsp;questions</a></li>
-                        <li><a href="#"><i class="fas fa-file-alt"></i>&nbsp;final test</a></li>
-                        <li><a href="#"><i class="fas fa-file-alt"></i>&nbsp;mid term </a></li>
+                      @foreach($cats as $cat)
+                        <li><a href="/searchcat/{{$cat->category_Name}}"><i class="fas fa-chalkboard"></i>&nbsp;{{$cat->category_Name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -103,12 +100,12 @@
                 @foreach($posts as $post)
                 <a style="text-decoration:none;" href="comment/{{$post->post_id}}">
                 <div class="main-post">
-                    <img src="imgs/avatar3.png" alt="avatar" />
+                    <img src="../imgs/avatar3.png" alt="avatar" />
                     <span>&nbsp;{{$post->auther}} &nbsp;&nbsp;<small>{{$post->created_at}}</small></span>
                     <p>
                        {{$post->body}}
                     </p>
-                    <img class="img-responsive" src="{{$post->image}}" alt="plane" />
+                    <img class="img-responsive" src="../{{$post->image}}" alt="plane" />
                     <!--laravel-->
                     
                 </div>
@@ -130,7 +127,7 @@
                 <div class="event1">
                     <h3 class="text-center">upcoming events </h3>
                     <div class="e1 text-center">
-                        <img src="imgs/osc.jpg" alt="osc">
+                        <img src="../imgs/osc.jpg" alt="osc">
                         <p>
                             saturday <span style="color:rgb(160, 160, 160)">at</span><br>
                             11:30 AM
@@ -139,7 +136,7 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="imgs/microsoft-2.png" alt="osc">
+                        <img src="../imgs/microsoft-2.png" alt="osc">
                         <p>
                             sunday <span style="color:rgb(160, 160, 160)">at</span><br>
                             10:00 AM
@@ -148,7 +145,7 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="imgs/cover.jpg" alt="osc">
+                        <img src="../imgs/cover.jpg" alt="osc">
                         <p>
                             thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
                             8:00 AM
@@ -157,7 +154,7 @@
                     </div>
                     <hr>
                     <div class="e1 text-center">
-                        <img src="imgs/pexels-photo-908284.jpeg" alt="osc">
+                        <img src="../imgs/pexels-photo-908284.jpeg" alt="osc">
                         <p>
                             thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
                             8:00 AM
