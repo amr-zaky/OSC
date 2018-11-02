@@ -19,7 +19,6 @@ class indexcontroller extends Controller
     $post=Post::all();
 
     return view("index")->with("posts",$post);
-
   }
   public function comment()
   {
@@ -36,7 +35,16 @@ class indexcontroller extends Controller
     
     $body=$request->body;
     $tilte=$request->tilte;
-    $author=$request->author;
+    $author=Auth::user()->name;
+    $image=$request->imgefile;
+
+   $photoName = time().'.'.$request->imgefile->getClientOriginalExtension();
+
+  /*
+  talk the select file and move it public directory and make avatars
+  folder if doesn't exsit then give it that unique name.
+  */
+  $request->imgefile->move(public_path('avatars'), $photoName);
 
     $post=new Post();
     $post->author=$author;

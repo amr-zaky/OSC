@@ -105,20 +105,24 @@
             <div class="col-lg-6  posts">
                 <!--write post-->
                 <div class="post">
-                    <form method="POST" action="/main1">
-                        <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="5"></textarea>
-                        </div>
+                    <form method="POST" action="/main1" enctype="multipart/form-data">
+
 
                         <div class="form-group">
-                            <input type="text" name="author" placeholder="Author">
-
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" name="title" placeholder="Ttitle">
+                            <input  class="form-control" type="text" name="title" placeholder="Ttitle">
                             
                         </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="5" placeholder="..Post Containt"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input   type="file" name="imgefile">
+                            
+                        </div>
+
+
 
                         <button type="submit" class="btn btn-info"><i class="fas fa-pen"></i> &nbsp; post</button>
                     </form>
@@ -130,10 +134,9 @@
                 
                 <div class="main-post">
                     <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp; {{$post->title}}</span>
+                    <span>&nbsp;{{$post->auther}} &nbsp;&nbsp;<small>{{$post->created_at}}</small></span>
                     <p>
                        {{$post->body}}
-                       {{$post->created_at}}
                     </p>
                     <img class="img-responsive" src="{{$post->image}}" alt="plane" />
                     <!--laravel-->
