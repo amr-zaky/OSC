@@ -77,9 +77,10 @@
             <div class="col-lg-3 ">
                 <!--global search-->
                 <div class="search2 ">
-                    <form method="" action="">
+                      <form method="POST" action='/seach'>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="search">
+                            {{csrf_field()}}
+                            <input class="form-control" type="text" placeholder="search" name="searchval">
                             <button type="submit" class="btn btn-danger btn-lg ">Go!</button>
                         </div>
                         
@@ -91,12 +92,10 @@
                     <h3>category</h3>
                     <div class="style"></div>
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="fas fa-chalkboard"></i>&nbsp;lectures</a></li>
-                        <li><a href="#"><i class="fas fa-vials"></i>&nbsp;labs</a></li>
-                        <li><a href="#"><i class="fas fa-book"></i>&nbsp;books</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i>&nbsp;questions</a></li>
-                        <li><a href="#"><i class="fas fa-file-alt"></i>&nbsp;final test</a></li>
-                        <li><a href="#"><i class="fas fa-file-alt"></i>&nbsp;mid term </a></li>
+
+                        @foreach($cats as $cat)
+                        <li><a href="#"><i class="fas fa-chalkboard"></i>&nbsp;{{$cat->category_Name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -107,7 +106,7 @@
                 <div class="post">
                     <form method="POST" action="/main1" enctype="multipart/form-data">
 
-
+                            {{csrf_field()}}
                         <div class="form-group">
                             <input  class="form-control" type="text" name="title" placeholder="Ttitle">
                             
@@ -116,11 +115,11 @@
                         <div class="form-group">
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="5" placeholder="..Post Containt"></textarea>
                         </div>
-                        
+                        <!-- 
                         <div class="form-group">
-                            <input   type="file" name="imgefile">
+                            <input  type="file" name="imgefile">
                             
-                        </div>
+                        </div> -->
 
 
 
@@ -131,7 +130,7 @@
                 <!--start post1 -->
 
                 @foreach($posts as $post)
-                
+                <a style="text-decoration:none;" href="comment/{{$post->post_id}}">
                 <div class="main-post">
                     <img src="imgs/avatar3.png" alt="avatar" />
                     <span>&nbsp;{{$post->auther}} &nbsp;&nbsp;<small>{{$post->created_at}}</small></span>
@@ -141,12 +140,12 @@
                     <img class="img-responsive" src="{{$post->image}}" alt="plane" />
                     <!--laravel-->
                     <div class="container ">
-                        <a class="button button--fun" href="#">
+                        <a class="button button--fun" href="comment/{{$post->post_id}}">
                             <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
                         </a>
                     </div>
                 </div>
-            
+            </a>
             @endforeach
                 <!--endpost1-->
                

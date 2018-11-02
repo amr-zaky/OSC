@@ -72,11 +72,13 @@
         <div class="row">
             <div class="col-lg-3 ">
                 <div class="search2 ">
-                    <form method ="" action="">
+                    <form method="POST" action='/seach'>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Default input">
-                            <button type="submit" class="btn btn-success ">Go!</button>
+                            {{csrf_field()}}
+                            <input class="form-control" type="text" placeholder="search" name="searchval">
+                            <button type="submit" class="btn btn-danger btn-lg ">Go!</button>
                         </div>
+                        
                     </form>
                 </div>
 
@@ -96,17 +98,23 @@
             </div>
             <div class="col-lg-6  posts">
                 <!--start post -->
+                
+
+                @foreach($posts as $post)
+                <a style="text-decoration:none;" href="comment/{{$post->post_id}}">
                 <div class="main-post">
                     <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp;abdelmoniem ahmed</span>
+                    <span>&nbsp;{{$post->auther}} &nbsp;&nbsp;<small>{{$post->created_at}}</small></span>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       {{$post->body}}
                     </p>
-                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
-
+                    <img class="img-responsive" src="{{$post->image}}" alt="plane" />
+                    <!--laravel-->
+                    
                 </div>
+            </a>
+            @endforeach
+
                 <div class="comment">
                     <form>
                         <div class="form-group">

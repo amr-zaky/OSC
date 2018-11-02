@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Post;
+use App\Category;
 
 class indexcontroller extends Controller
 {
+  public function comment($id)
+  {    
+    $posts=Post::all();
+    $post=$posts->where('post_id',$id);
+    return view("comment")->with("posts",$post);
+  }
+
   
   public function welcome()
   {
@@ -17,13 +25,12 @@ class indexcontroller extends Controller
   {
 
     $post=Post::all();
+    $cat=Category::all();
+    return view("index")->with("posts",$post)->with('cats',$cat);
+  }
+  
 
-    return view("index")->with("posts",$post);
-  }
-  public function comment()
-  {
-    return view("comment");
-  }
+
   public function university()
   {
     return view ("university");
@@ -33,18 +40,14 @@ class indexcontroller extends Controller
   public function create(Request $request)
   {
     
-    $body=$request->body;
+
+    /*$body=$request->body;
     $tilte=$request->tilte;
     $author=Auth::user()->name;
     $image=$request->imgefile;
 
    $photoName = time().'.'.$request->imgefile->getClientOriginalExtension();
-
-  /*
-  talk the select file and move it public directory and make avatars
-  folder if doesn't exsit then give it that unique name.
-  */
-  $request->imgefile->move(public_path('avatars'), $photoName);
+  $request->imgefile->move(public_path('imgs'), $photoName);
 
     $post=new Post();
     $post->author=$author;
@@ -52,13 +55,24 @@ class indexcontroller extends Controller
     $post->body=$body;
     $post->User_id=auth()->user()->id;
     $post->category_id=1;
-    $post->image="imgs/post.jpg";
-
+    $post->image="imgs/".$photoName;
     $post->save();
+   return redirect()->intended(route('mainpage'));*/
 
-    return redirect('/main');
+   return print_r($request);
+  }
+
+   public function search(Request $request)
+  {
+
+     
+    $posts=Post::all();
+    $post=$posts->where('title',$request->searchval);  
+    return view("comment")->with("posts",$post);
   }
 
 
+
+  
 
 }
