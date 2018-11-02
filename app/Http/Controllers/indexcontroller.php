@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
+use input;
 use App\Post;
+use App\Comment;
 
 class indexcontroller extends Controller
 {
@@ -16,15 +17,27 @@ class indexcontroller extends Controller
   public function index()
   {
 
-    $post=Post::all();
-
-    return view("index")->with("posts",$post);
+    $post=Post::orderBy('created_at','DESC')->get();
+    return  view("index")->with("posts",$post);
 
   }
-  public function comment()
+  public function comment($id)
+  {    
+    $posts=Post::all();
+    $post=$posts->where('post_id',$id);
+    return view("comment")->with("posts",$post);
+  }
+  
+  public function search(Request $request)
   {
-    return view("comment");
+
+    return $request->searchval;
+    
+    $posts=Post::all();
+    $post=$posts->where('title',$request->searchval);
+    return view("comment")->with("posts",$post);
   }
+
   public function university()
   {
     return view ("university");

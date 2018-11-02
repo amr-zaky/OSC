@@ -94,15 +94,20 @@
                 </div>
 
             </div>
+            
             <div class="col-lg-6  posts">
                 <!--start post -->
+
+               
+               @foreach($posts as $post)
+               
                 <div class="main-post">
+            
                     <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp;abdelmoniem ahmed</span>
+                    <span>&nbsp;{{$post->title}}</span>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    {{$post->body}}
+                    {{$post->created_at}}
                     </p>
                     <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
 
@@ -114,8 +119,10 @@
                             <button type="submit" class="btn btn-success ">comment</button>
                         </div>
                     </form>
-                </div>
-
+                    
+                </div>  
+                @endforeach
+               
             </div>
             <!--end post c-->
             <div class="col-lg-3">

@@ -77,9 +77,9 @@
             <div class="col-lg-3 ">
                 <!--global search-->
                 <div class="search2 ">
-                    <form method="" action="">
+                    <form method="POST" action='/seach'>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="search">
+                            <input class="form-control" type="text" placeholder="search" name="searchval">
                             <button type="submit" class="btn btn-danger btn-lg ">Go!</button>
                         </div>
                         
@@ -127,12 +127,13 @@
                 <!--start post1 -->
 
                 @foreach($posts as $post)
-                
+                <a href="{{ URL('/comment/'.$post->post_id)}}" >
                 <div class="main-post">
+                
                     <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp; {{$post->title}}</span>
+                    <span>&nbsp; <a href="/comment/{{ $post->post_id }}">{{$post->title}}  </a></span>
                     <p>
-                       {{$post->body}}
+                        {{$post->body}}
                        {{$post->created_at}}
                     </p>
                     <img class="img-responsive" src="{{$post->image}}" alt="plane" />
@@ -142,9 +143,10 @@
                             <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
                         </a>
                     </div>
+                   
                 </div>
-            
-            @endforeach
+                </a>
+                @endforeach
                 <!--endpost1-->
                
               
