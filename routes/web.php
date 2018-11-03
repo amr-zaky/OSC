@@ -15,10 +15,12 @@ use App\Http\Controllers\universityController;
   
 Route::get('/',          "indexcontroller@welcome");
 Route::get('/main',      "indexcontroller@index");
-Route::get('/comment',   "indexcontroller@comment");
+Route::POST('/main',     'indexcontroller@addPost' );
 
-Auth::routes();
+Route::post('/main/{id}', 'indexcontroller@addcomment');
+Route::get('/main/{id}',   "indexcontroller@comment");
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Auth::routes();
 Route::resource('university','universityController');

@@ -1,6 +1,8 @@
+
 <!DOCTYPE HTML >
 <html>
 
+<!-- this is commeent-->
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,7 +68,9 @@
             </div>
         </div>
     </nav>
+
     <!--end nav bar-->
+    
     <!--start the content-->
     <div class="container-fluid">
         <div class="row">
@@ -95,74 +99,46 @@
 
             </div>
             <div class="col-lg-6  posts">
-                <!--start post -->
-                <div class="main-post">
-                    <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp;abdelmoniem ahmed</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg" alt="plane" />
 
+                <!--start post -->
+
+                <div class="main-post">
+                    <img src="imgs/avatar3.png" alt="avatar"/>
+                    <span>{{ $var->title}} <small>by {{$var->auther}}</small></span>
+                    <p>
+                        {{$var->body}}
+                    </p>
+                    <img class="img-responsive" src="{{$var->image}}" alt="plane" />
                 </div>
+
+                @foreach ($com as $c)
+                    {{$c->body}}
+                    <br>
+                    
+                @endforeach
+
+
+
                 <div class="comment">
-                    <form>
+                    <form method="POST" action="/OSC/public/main/{{$var->post_id}}">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Comment">
+                            <input class="form-control" type="text" placeholder="Comment" name="body">
+                            <input style="display:none" class="form-control" type="text" placeholder="Comment" name="id" value="{{$var->post_id}}" >
+                            
                             <button type="submit" class="btn btn-success ">comment</button>
                         </div>
                     </form>
                 </div>
+                
+
+             <a href="/OSC/public/main" class="btn btn-default">Go Back </a>
 
             </div>
             <!--end post c-->
-            <div class="col-lg-3">
-                <div class="event1">
-                    <h3 class="text-center">upcoming events </h3>
-                    <div class="e1 text-center">
-                        <img src="imgs/osc.jpg" alt="osc">
-                        <p>
-                            saturday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            11:30 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-                    <hr>
-                    <div class="e1 text-center">
-                        <img src="imgs/microsoft-2.png" alt="osc">
-                        <p>
-                            sunday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            10:00 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-                    <hr>
-                    <div class="e1 text-center">
-                        <img src="imgs/cover.jpg" alt="osc">
-                        <p>
-                            thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            8:00 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-                    <hr>
-                    <div class="e1 text-center">
-                        <img src="imgs/pexels-photo-908284.jpeg" alt="osc">
-                        <p>
-                            thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            8:00 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-
-
-                </div>
-
-            </div>
         </div>
     </div>
+
     <footer class="text-center">
         Copy Right &copy; Designed by<span>Osc</span> 's Team 2018
     </footer>

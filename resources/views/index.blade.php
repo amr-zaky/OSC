@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <!--start nav bar -->
+  
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -70,8 +70,8 @@
             </div>
         </div>
     </nav>
-    <!--end nav bar-->
-    <!--start the content-->
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 ">
@@ -101,140 +101,47 @@
                 </div>
 
             </div>
+
             <!--end side bar -->
             <div class="col-lg-6  posts">
                 <!--write post-->
                 <div class="post">
-                    <form method="" action="">
+
+                    <form method="POST" action="/OSC/public/main">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="auther" placeholder="auther"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="title" placeholder="title"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="body" placeholder="body"></textarea>
+                            <input type="file" class="form-control-file" name="image">
                         </div>
                         <button type="submit" class="btn btn-info"><i class="fas fa-pen"></i> &nbsp; post</button>
                     </form>
-                </div>
-                <!--end write post-->
-                <!--start post1 -->
-                <div class="main-post">
-                    <img src="imgs/avatar3.png" alt="avatar" />
-                    <span>&nbsp;abdelmoniem ahmed</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <img class="img-responsive" src="imgs/post.jpg" alt="plane" />
-                    <!--laravel-->
-                    <div class="container ">
-                        <a class="button button--fun" href="#">
-                            <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
-                        </a>
-                    </div>
-                </div>
-                <!--endpost1-->
-                <div class="main-post ">
-                    <img src="imgs/avatar2.png" alt="avatar" />
-                    <!--laravel-->
-                    <span>&nbsp;ali ahmed</span>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <img class="img-responsive" src="imgs/backlit-bright-clouds-355508.jpg"
-                        alt="plane" />
-                    <!--laravel-->
-                    <div class="container ">
-                        <a class="button button--fun" href="#">
-                            <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="main-post">
-                    <img src="imgs/avatar3.png" alt="avatar" />
-                    <!--laravel-->
-                    <span>&nbsp; mohamed ahmed</span>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <img class="img-responsive" src="imgs/abundance-bookcase-books-775998.jpg" alt="plane" />
-                    <!--laravel-->
-                    <div class="container ">
-                        <a class="button button--fun" href="#">
-                            <i class="fas fa-comment"></i><span class="button__content"> Comment</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!--end post -->
-            <div class="col-lg-3">
-                <!-- start events-->
-                <div class="event1">
-                    <h3 class="text-center">upcoming events </h3>
-                    <div class="e1 text-center">
-                        <img src="imgs/ev2.jpg" alt="osc">
-                        <!--lravel-->
-                        <p>
-                            saturday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            11:30 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-                    <hr>
-                    <div class="e1 text-center">
-                        <img src="imgs/ev.jpg" alt="osc">
-                        <!--laravel-->
-                        <p>
-                            sunday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            10:00 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-                    <hr>
-                    <div class="e1 text-center">
-                        <img src="imgs/cover.jpg" alt="osc">
-                        <!--laravel-->
-                        <p>
-                            thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            8:00 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
-                    <hr>
-                    <div class="e1 text-center">
-                        <img src="imgs/pexels-photo-908284.jpeg" alt="osc">
-                        <!--laravel-->
-                        <p>
-                            thuesday <span style="color:rgb(160, 160, 160)">at</span><br>
-                            8:00 AM
-                        </p>
-                        <button type="submit" class=" btn  btn-info "><a href="#">info</a></button>
-                    </div>
 
 
                 </div>
+
+                @foreach ($var as $v)
+                    
+                    <div class="main-post">
+                        <img src="imgs/avatar3.png" alt="avatar" />
+                        <span>{{ $v->title}} <small>by {{$v->auther}}</small></span>
+                        <p>
+                            {{$v->body}}
+                        </p>
+                        <img class="img-responsive" src="{{$v->image}}" alt="plane" />
+                        <div class="container ">
+                            <a class="button button--fun" href="/OSC/public/main/{{$v->post_id}}">
+                                <i class="fas fa-comment"></i> <span class="button__content"> Comment</span>
+                            </a>
+                        </div>
+                    </div>
+
+                @endforeach
 
             </div>
-            <!--end events-->
-        </div>
-    </div>
-    <!--start footer-->
-    <footer class="text-center">
-        Copy Right &copy; Designed by<span>Osc</span> 's Team 2018
-    </footer>
-    <!--end footer-->
+          
 
-    <!--end the content-->
-    <!--java script libraries-->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <!--laravel-->
-    <script src="js/index.js"></script>
-    <!--laravel-->
-    <!--bootsrap-->
-    <script src="js/bootstrap.min.js"></script>
-    <!--laravel-->
 </body>
 
 </html>
